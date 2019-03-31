@@ -1,0 +1,63 @@
+<html>
+    <head>
+        <title></title>
+        <style>
+            td{
+                width: 50px;
+                height: 50px;
+            }
+
+            #maingame {
+                display: none;
+            }
+            body {
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        
+        <div id='maingame' >
+            <div id='score' >Player 1 : 0  Player 2 : 0  Draw : 0</div>
+            <div id=result></div>
+            <table border=2 align="center">
+                <tr>
+                    <td id="t0" onclick="mark(0)"></td>
+                    <td id="t1" onclick="mark(1)"></td>
+                    <td id="t2" onclick="mark(2)"></td>
+                </tr>
+                <tr>
+                    <td id="t3" onclick="mark(3)"></td>
+                    <td id="t4" onclick="mark(4)"></td>
+                    <td id="t5" onclick="mark(5)"></td>
+                </tr>
+                <tr>
+                    <td id="t6" onclick="mark(6)"></td>
+                    <td id="t7" onclick="mark(7)"></td>
+                    <td id="t8" onclick="mark(8)"></td>
+                </tr>
+            </table>
+
+            <div id="turn" ></div>
+            <button onclick=restart() >Restart</button>
+            <button onclick=showPreGame() >Back</button>
+            <button onclick="p1Score=p2Score=draw=0;updateScore();" >Reset Score</button>
+        </div>
+        <br>
+        <div id="pregame" >
+            Select Opponent : 
+            <input type="radio" name="opponent" value="user" id="user" >Vs User
+            <input type="radio" name="opponent" value="bot" id="bot" > Vs Bot
+            <br>
+            Select Difficulty : <select id="difficulty">
+                <option value="0">Easy</option>
+                <option value="1">Medium</option>
+                <option value="2">Hard</option>
+            </select>
+            <br>
+            <button onclick="restart()" >Start Game</button>
+        </div>
+
+        <script src="tictactoe.js"></script>
+    </body>
+</html>
